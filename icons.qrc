@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Icons/join.png</file>
+        <file>Icons/unjoin.png</file>
+    </qresource>
+</RCC>

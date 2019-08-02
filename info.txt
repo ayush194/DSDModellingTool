@@ -1,0 +1,63 @@
+hover over the line/path (domain), this changes the domain private property hovered to true, if clicked, then property selected changes to true and appends it to the list selected_domains. (Either of these two events should cause the scene to be rendered again. You cannot simply place a new item on top of the previous one since that would be asking for trouble.)
+
+static std::vector<int> selected_domains;
+
+when you click join, you loop over the selected_domains list and join pairs of consecutive domains, and also set their selectd property to false. Rerendere
+
+
+Hover->Gray
+Selected->Black (thicker line)
+
+RenderArea {
+private:
+	map<domain_id, QGraphicsItem*>;
+}
+
+Spring relaxation algorithm
+Simulated Annealing algorithm kirkpatrick
+Grey Goo
+
+rename RenderArea to RenderScene
+Subclass GraphicsPathItem to RenderSceneItem and add event handlers.
+map<domain_id, RenderItems>
+
+all domains are basically paths
+each scene should store a  map<domain_id, RenderSceneItem*>
+
+each strand/species should correspond to a scene which must be stored in memory
+when that species is selected simply render it's corresponding scene
+map<int, RenderArea> strand_scenes, species_scenes
+
+each scene(RenderScene) will contain the
+
+should species have its own scene or should it have a class SpeciesShape and you could call renderarea.render(speciesshape)
+->yes, each strand/species should have its own scene, which should also store the currently selected items
+
+each species/strand 
+
+
+for everything that you want to render, ther should be a class/structure which stores everything that is required to render that object (by object, I mean a strand or a species)
+
+
+SceneShape{
+	//domain_id
+	//set<QGraphicsItem*>
+}
+
+
+
+
+NRSMCH
+
+//standard way to draw something on the scene
+start -> create new strand -> add some strands to the scene (ensure tht at any time, there shouldn't be two copies of the same domain in the scene, this is done by ensuring that each domain is associated with exactly one strandsceneitem) -> click on two domains on the scene and join -> dialog box warning the user that they are part of two different species, or two different strands or, a strand and a species -> combine them to create a new species 
+
+
+
+
+hairpin loops
+pseudoknots
+
+spring relaxations
+
+
